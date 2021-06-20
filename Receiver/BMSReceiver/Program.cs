@@ -13,11 +13,8 @@ namespace BMSReceiver
             int count = 0;
             List<BatteryProperties> batteryValues = new List<BatteryProperties>();
 
-            string inputValues = string.Empty;
-           // string inputValues = GenerateRandomNumbers();
-            //var inputList = inputValues.Split('\n');
-            while ((inputValues = Console.ReadLine()) != null)
-           // foreach(var value in inputList)
+            string inputValues = string.Empty;        
+            while ((inputValues = Console.ReadLine()) != null)         
             {
                 var receiverData = streamDataReceiver.GetDataFromReceiver(inputValues);                
                 count++;
@@ -38,25 +35,6 @@ namespace BMSReceiver
                     count = 0;
                 }
             }
-        }
-
-        public static string GenerateRandomNumbers()
-        {
-            var input = string.Empty;
-            using (StringWriter str = new StringWriter())
-            {
-                var originalStream = Console.Out;
-                Console.SetOut(str);
-                Random num = new Random();
-                for (int i = 0; i < 5; i++)
-                {
-                    Console.WriteLine($"{num.Next(1, 100)},{num.Next(1, 100)}");
-                }
-                Console.SetOut(originalStream);
-                input = str.ToString();
-            }
-
-            return input;
-        }
+        }       
     }
 }
