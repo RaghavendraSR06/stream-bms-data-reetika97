@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 namespace BMSReceiver
 {
     public class BatteryProcessor : IBatteryProcessor
-    {
-        BatteryParameters parameters;
-       public BatteryProcessor()
-        {
-            parameters = new BatteryParameters();
-        }
+    {       
         public void CalculateMinimumAndMaximumValue(BatteryProperties batteryProperties)
         {           
             GetMinimumValue(batteryProperties);
